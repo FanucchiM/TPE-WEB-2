@@ -1,0 +1,48 @@
+<!-- formulario de alta de pelicula -->
+<form action="agregar" method="POST" class="my-4">
+    <div class="row">
+        <div class="col-9">
+            <div class="form-group">
+                <label>Título</label>
+                <input required name="title" type="text" class="form-control">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-9">
+                <div class="form-group">
+                    <label>Anio</label>
+                    <input required name="Anio" type="int" class="form-control">
+                </div>
+            </div>
+
+        <div class="col-3">
+            <div class="form-group">
+                <label>Genero</label>
+                <select required name="Genero" class="form-control">
+                    <option value="Accion">Accion</option>
+                    <option value="Aventura">Aventura</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Suspenso">Suspenso</option>
+                    <option value="Terror">Terror</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-3">
+        <div class="form-group">
+            <label>Id_Director</label>
+            <select required name="Id_Director" class="form-control">
+                <option value="Accion">Accion</option>
+                <option value="Aventura">Aventura</option>
+                <option value="Drama">Drama</option>
+                <option value="Suspenso">Suspenso</option>
+                <option value="Terror">Terror</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+    <button type="submit" class="btn btn-primary mt-2">Guardar</button>
+</form>

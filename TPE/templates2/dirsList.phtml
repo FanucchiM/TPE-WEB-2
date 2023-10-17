@@ -1,0 +1,28 @@
+<?php require './templates2/header.phtml' ?>
+
+<div class='detalles-directores'>
+    <a href='add-director' class='btn btn-success'>+ Agregar</a>
+</div>
+
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Cantidad de peliculas</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach($dirs as $dir): ?>
+        <tr>
+            <td><?= $dir->Nombre ?></td>
+            <td><?= $dir->Edad ?></td>
+            <td><?= $dir->Cantidaddepeliculas ?></td>
+            <td><a class="btn btn-warning">Editar</a><a href='delete-dev/<?= $dir->id ?>' class="btn btn-danger">Borrar</a></td>
+        </tr>
+    <?php endforeach ?>
+    </tbody>
+</table>
+
+
+<?php require './templates2/footer.phtml' ?>

@@ -1,0 +1,58 @@
+<?php require 'templates2/header.phtml' ?>
+
+
+<div class='detalles-peliculas'>
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" data-bs-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+        Filtrar por director
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="movies">Mostrar todos</a>
+        <?php foreach($dirs as $dir): ?>
+        <a class="dropdown-item" href="movies/director/<?= $dir->id ?>"><?= $dir->Nombre ?></a>
+        <?php endforeach ?>
+    </div>
+    <div>
+    <?php if(AuthHelper::isLogged()): ?>
+        <div>
+            <a href='add-movie' class='btn btn-success'>+ Agregar</a>
+            <a href='add-director' class='btn btn-success'>+ Agregar director</a>
+            </div>
+    <?php endif ?>
+</div>
+
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Titulo</th>
+            <th scope="col">Anio</th>
+            <th scope="col">Genero</th>
+            <th scope="col">id Pelicula</th>
+            <th scope="col">Id_Director</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach($movies as $movie){ ?>
+        <tr>
+            <?php foreach($dirs as $dir){
+            if($movie->Id_Director == $dir->id){
+            ?>
+            <td><?= $movie->Titulo ?></td>
+            <td><?= $movie->Anio ?></td>
+            <td><?= $movie->Genero ?></td>
+            <td><?= $movie->id?></td>
+            <td><?php echo $dir->Nombre ?></td>
+            <td>
+            <?php if(AuthHelper::isLogged()): ?>
+                <a href="edit-movie/<?=$movie->id?>"><button class="btn btn-warning" >Editar</button></a>
+                <a href="delete-game/<?=$movie->id?>"><button class="btn btn-danger" >Borrar</button></a>
+                <?php endif ?>
+                </td>
+            <?php }
+                }?>
+        </tr>
+    <?php } ?>
+    </tbody>
+</table>
+
+<?php require 'templates2/footer.phtml' ?>

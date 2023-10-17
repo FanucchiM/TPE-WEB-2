@@ -1,0 +1,19 @@
+<?php require_once './templates2/header.phtml' ?>
+
+<form method='POST' action='add-new-dir'>
+    <div class="form-group">
+      <label for="nombreDirector">Nombre</label>
+      <input type="text" class="form-control" id="nombreDirector" name='nombreDirector' placeholder="Nombre del director">
+    </div>
+    <div class="form-group">
+      <label for="Edad">Edad</label>
+      <input type="number" class="form-control" id="Edad" name='Edad' placeholder="Edad">
+    </div>
+    <div class="form-group">
+      <label for="cantidad de peliculas">Cantidad de peliculas</label>
+      <input type="number" class="form-control" id="cantidad de peliculas" name='cantidadPeliculas' placeholder="cantidad de peliculas">
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar</button>
+</form>
+
+<?php require_once './templates2/footer.phtml' ?>
